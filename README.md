@@ -4,8 +4,7 @@
 
 ## Setup
 
-* Build Docker container, and run it.
-* Run `make menuconfig` and `make` to get the kernel
+* Dockerfile will compile the kernel.
 
 ## Development environment
 
