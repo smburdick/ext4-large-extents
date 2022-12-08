@@ -1,6 +1,7 @@
 # ext4 Large Extents in the Linux Kernel
 
-[Project Description](https://kernelnewbies.org/KernelProjects/Ext4LargeExtents)
+* [Project Description](https://kernelnewbies.org/KernelProjects/Ext4LargeExtents)
+* [Tasks](https://github.com/users/smburdick/projects/2)
 
 ## Setup
 
