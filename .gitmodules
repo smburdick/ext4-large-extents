@@ -1,6 +1,3 @@
 [submodule "linux"]
 	path = linux
 	url = https://github.com/smburdick/linux.git
-[submodule "linux-nstal"]
-	path = linux-nstal
-	url = https://github.com/smburdick/linux-nstal.git
