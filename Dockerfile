@@ -15,4 +15,4 @@ USER root
 
 WORKDIR /root/
 
-RUN make
+CMD make
