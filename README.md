@@ -10,5 +10,6 @@
 ### Kernel config
 
 I'm trying to keep this at a minimum for obvious reasons -- namely, compilation time.
-I have stripped the `.config` file down to only Apple M1 support and disabled all else that I thought I could, drivers in particular. `make` takes `4m46s`
-on my M1 Docker container.
+I have stripped the `.config` file down to only Apple M1 support and disabled all else that I thought I could, drivers in particular.
+
+* FWIW, `make` runs for 4m46s on my M1 Docker container.
