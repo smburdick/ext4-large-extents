@@ -7,9 +7,8 @@
 
 * Dockerfile will compile the kernel.
 
-## Development environment
+### Kernel config
 
-We don't want to re-compile everything from scratch, and we want to use our local machine
-for coding. It's better to run the container with the compiled code, and copy our changed
-files into the container, and recompile/test it in there. In the future, I would prefer to
-develop natively on my Mac, but I'm executing everything in an Ubuntu container for now.
+I'm trying to keep this at a minimum for obvious reasons -- namely, compilation time.
+I have stripped the `.config` file down to only Apple M1 support and disabled all else that I thought I could, drivers in particular. `make` takes `4m46s`
+on my M1 Docker container.
