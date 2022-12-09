@@ -4,16 +4,30 @@ RUN apt-get update
 
 RUN apt-get install libelf-dev xz-utils gcc make flex bison bc libncurses5-dev \
     libncursesw5-dev aptitude libssl-dev pkg-config libfuse-dev libcap-dev \
-    libasound2-dev libnuma-dev iproute2 -y
+    libasound2-dev libnuma-dev iproute2 jq kmod -y
 RUN apt-get update
 RUN apt-get install sudo parted -y
 
-COPY .config /root/
-COPY ./linux/ /root/
+# xfstests installation
+RUN sudo apt-get install acl attr automake bc dbench dump e2fsprogs fio gawk \
+    indent libacl1-dev libaio-dev libcap-dev libgdbm-dev libtool \
+    libtool-bin liburing-dev libuuid1 lvm2 psmisc python3 quota sed \
+    uuid-dev uuid-runtime xfsprogs linux-headers-generic sqlite3 -y
+
+RUN sudo apt-get install exfatprogs f2fs-tools ocfs2-tools udftools xfsdump \
+    xfslibs-dev -y
+
+COPY ./xfstests/ /root/xfstests
+WORKDIR /root/xfstests
+RUN make
+RUN sudo make install
+
+RUN mkdir -p /root/linux
+COPY .config /root/linux
+COPY ./linux/ /root/linux
 
 RUN chpasswd "root:root"
 USER root
 
-WORKDIR /root/
-
+WORKDIR /root/linux
 RUN make
