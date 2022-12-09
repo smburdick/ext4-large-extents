@@ -25,4 +25,4 @@ COPY .config /root/linux
 COPY ./linux/ /root/linux
 
 RUN chpasswd "root:root"
-USER root
+WORKDIR /root/
