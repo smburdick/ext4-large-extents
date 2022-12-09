@@ -12,4 +12,4 @@
 I'm trying to keep this at a minimum for obvious reasons -- namely, compilation time.
 I have stripped the `.config` file down to only Apple M1 support and disabled all else that I thought I could, drivers in particular.
 
-* FWIW, `make` runs for 5m39.62s on my M1 Docker container.
+* FWIW, `make` runs for 5m22.458s on my M1 Docker container.
