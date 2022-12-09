@@ -19,8 +19,6 @@ RUN sudo apt-get install exfatprogs f2fs-tools ocfs2-tools udftools xfsdump \
 
 COPY ./xfstests/ /root/xfstests
 WORKDIR /root/xfstests
-RUN make
-RUN sudo make install
 
 RUN mkdir -p /root/linux
 COPY .config /root/linux
@@ -28,6 +26,3 @@ COPY ./linux/ /root/linux
 
 RUN chpasswd "root:root"
 USER root
-
-WORKDIR /root/linux
-RUN make
