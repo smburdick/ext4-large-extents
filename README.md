@@ -20,7 +20,11 @@ Verify EXT4 image is mounted:
 ```
 ls -lah /ext4fs
 ```
-
+Create EXT4 partition
+```
+sudo parted /ext4fs
+```
+[Instructions](https://github.com/smburdick/ext4-large-extents/wiki/Creating-EXT4-partition-in-Linux)
 
 ### Kernel config
 
