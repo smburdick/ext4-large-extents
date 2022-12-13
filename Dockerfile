@@ -12,7 +12,7 @@ RUN apt-get install sudo parted -y
 RUN sudo apt-get install acl attr automake bc dbench dump e2fsprogs fio gawk \
     indent libacl1-dev libaio-dev libcap-dev libgdbm-dev libtool \
     libtool-bin liburing-dev libuuid1 lvm2 psmisc python3 quota sed \
-    uuid-dev uuid-runtime xfsprogs linux-headers-generic sqlite3 -y
+    uuid-dev uuid-runtime xfsprogs linux-headers-generic sqlite3 fdisk lsscsi -y
 
 RUN sudo apt-get install exfatprogs f2fs-tools ocfs2-tools udftools xfsdump \
     xfslibs-dev -y

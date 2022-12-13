@@ -5,7 +5,24 @@
 
 ## Setup
 
-* Dockerfile will compile the kernel.
+
+On your local machine, run:
+```
+mkdir -p $HOME/ext4fs
+docker build -t linux .
+docker run --privileged -it -v $HOME/ext4fs:/ext4fs linux
+```
+Inside the container:
+```
+dd if=/dev/zero of=ext4fs.img bs=1G count=0 seek=6
+mkfs.ext4 ext4fs.img
+mount /dev/loop0 /ext4fs
+```
+Verify EXT4 image is mounted:
+```
+ls -lah /ext4fs
+```
+
 
 ### Kernel config
 
