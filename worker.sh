@@ -8,7 +8,7 @@ then
 elif [ $CHOICE = "save" ];
 then
     docker commit $CONTAINER_NAME $IMAGE_NAME
-elif [ $CHOICE = "run" ];
+elif [ $CHOICE = "restart" ];
 then
     docker container rm $CONTAINER_NAME
     docker run --name $CONTAINER_NAME -it $IMAGE_NAME 
