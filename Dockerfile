@@ -27,5 +27,4 @@ COPY ./linux/ /root/linux
 RUN chpasswd "root:root"
 WORKDIR /root/
 
-RUN dd if=/dev/zero of=ext4fs.img bs=1G count=0 seek=6
-RUN mkfs.ext4 ext4fs.img
+COPY mountfs.sh /root/
