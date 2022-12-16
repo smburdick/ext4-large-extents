@@ -14,17 +14,10 @@ sh worker.sh cp         # Copy your updated files into the container
 sh worker.sh stop       # Stop container
 ```
 
-### Add EXT4 file system to docker container
-On your local machine, run:
-```
-mkdir -p $HOME/.ext4fs
-docker build -t linux .
-docker run --name linux --privileged -it -v $HOME/ext4fs:/ext4fs linux
-```
+#### Mount EXT4 device inside the container
 
-#### Inside the container:
 ```
-mount /dev/loop0 /ext4fs
+sh mountfs.sh
 ```
 Verify EXT4 image is mounted:
 ```

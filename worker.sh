@@ -13,12 +13,12 @@ then
 elif [ $CHOICE = "run" ];
 then
     docker run --privileged --name $CONTAINER_NAME --rm -v \
-        $HOME/_ext4fs:/dev/ext4 -it $IMAGE_NAME
+        $HOME/_ext4fs:/ext4fs -it $IMAGE_NAME
 elif [ $CHOICE = "restart" ];
 then
     docker container rm $CONTAINER_NAME
     docker run --privileged --name $CONTAINER_NAME --rm -v \
-        $HOME/_ext4fs:/dev/ext4 -it $IMAGE_NAME
+        $HOME/_ext4fs:/ext4fs -it $IMAGE_NAME
 elif [ $CHOICE = "cp" ];
 then
     docker cp linux/fs/ext4/ $CONTAINER_NAME:/root/linux/fs/
